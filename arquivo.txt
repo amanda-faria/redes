@@ -1,0 +1,1 @@
+Arquivo do tipo txt para ser enviado por e-mail.
