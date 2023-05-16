@@ -33,7 +33,7 @@ public class UtilidadeEmail {
             msg.addHeader("format", "flowed");
             msg.addHeader("Content-Transfer-Encoding", "8bit");
 
-            msg.setFrom(new InternetAddress("no_reply@example.com", "NoReply-JD"));
+            msg.setFrom(new InternetAddress("no_reply@example.com", "Lucas"));
 
             msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
 
@@ -63,7 +63,7 @@ public class UtilidadeEmail {
             msg.addHeader("format", "flowed");
             msg.addHeader("Content-Transfer-Encoding", "8bit");
 
-            msg.setFrom(new InternetAddress("no_reply@example.com", "NoReply-JD"));
+            msg.setFrom(new InternetAddress("no_reply@example.com", "Lucas"));
 
             msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
 
@@ -113,7 +113,7 @@ public class UtilidadeEmail {
             msg.addHeader("format", "flowed");
             msg.addHeader("Content-Transfer-Encoding", "8bit");
 
-            msg.setFrom(new InternetAddress("no_reply@example.com", "NoReply-JD"));
+            msg.setFrom(new InternetAddress("no_reply@example.com", "Lucas"));
 
             msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
 
@@ -146,7 +146,7 @@ public class UtilidadeEmail {
 
             //terceira parte para exibir a imagem no corpo do e-mail
             messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setContent("<h1>Attached Image</h1>" +
+            messageBodyPart.setContent("<h1>Imagem</h1>" +
                     "<img src='cid:image_id'>", "text/html");
             multipart.addBodyPart(messageBodyPart);
 
