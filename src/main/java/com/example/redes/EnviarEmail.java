@@ -28,7 +28,7 @@ public class EnviarEmail {
         props.put("mail.smtp.port", "465"); //SMTP Port
 
         Authenticator auth = new Authenticator() {
-            //override the getPasswordAuthentication method
+            //substituir o método getPasswordAuthentication
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(fromEmail, password);
             }
