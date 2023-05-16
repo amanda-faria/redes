@@ -18,7 +18,7 @@ public class EnviarEmail {
         final String password = "lphinbiznhexqmgr"; // Inserir aqui não a sua senha do e-mail mas a senha do App que o google gera.
         final String toEmail = "lucasfaria.redes@gmail.com"; // E-mail destinatário.
 
-        System.out.println("SSLEmail Start");
+        System.out.println("Iniciando SSLEmail");
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP Host
         props.put("mail.smtp.socketFactory.port", "465"); //SSL Port
@@ -35,7 +35,7 @@ public class EnviarEmail {
         };
 
         Session session = Session.getDefaultInstance(props, auth);
-        System.out.println("Session created");
+        System.out.println("A sessão foi criada");
 
 //        Cada um desses métodos representa um e-mail, então, se você tirar o comentário dos três, serão enviados três e-mails,
 //        um simples com texto, outro com um arquivo txt junto e outro com uma imagem png.
