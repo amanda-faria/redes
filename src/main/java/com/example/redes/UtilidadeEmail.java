@@ -140,7 +140,7 @@ public class UtilidadeEmail {
             DataSource source = new FileDataSource(filename);
             messageBodyPart.setDataHandler(new DataHandler(source));
             messageBodyPart.setFileName(filename);
-            //O truque é adicionar o cabeçalho content-id aqui
+
             messageBodyPart.setHeader("Content-ID", "image_id");
             multipart.addBodyPart(messageBodyPart);
 

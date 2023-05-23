@@ -7,11 +7,10 @@ import javax.mail.internet.MimeBodyPart;
 import java.util.Properties;
 
 public class LerEmail {
-    public static final String USERNAME = "lucasfaria.redes@gmail.com"; //Inserir aqui o seu e-mail gmail.
-    public static final String PASSWORD = "qfcabyhikbfjcrgm"; // Inserir aqui não a sua senha do e-mail mas a senha do App que o google gera.
+    public static final String USERNAME = "lucasfaria.redes@gmail.com";
+    public static final String PASSWORD = "qfcabyhikbfjcrgm";
 
     public static void main(String[] args) throws Exception {
-        // 1. Propriedades de configuração para a sessão de correio.
         Properties props = new Properties();
         props.put("mail.pop3.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.pop3.socketFactory.fallback", "false");
@@ -22,7 +21,6 @@ public class LerEmail {
         props.put("mail.store.protocol", "pop3");
         props.put("mail.pop3.ssl.protocols", "TLSv1.2");
 
-        // 2. Cria um objeto  javax.mail.Authenticator object.
         Authenticator auth = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -30,24 +28,19 @@ public class LerEmail {
             }
         };
 
-        // 3. Criando sessão de email.
         Session session = Session.getDefaultInstance(props, auth);
 
-        // 4. Obtenha o provedor da loja POP3 e conecte-se à loja.
         Store store = session.getStore("pop3");
         store.connect("pop.gmail.com", LerEmail.USERNAME, LerEmail.PASSWORD);
 
-        // 5. Obtenha a pasta e abra a pasta INBOX na loja.
         Folder inbox = store.getFolder("INBOX");
         inbox.open(Folder.READ_ONLY);
 
-        // 6. Recupere as mensagens da pasta.
         Message[] messages = inbox.getMessages();
         for (Message message : messages) {
             System.out.println("De: " + message.getFrom()[0].toString());
             System.out.println("Recebido: " + message.getSentDate());
             System.out.println("Assunto: " + message.getSubject());
-//            message.writeTo(System.out);
 
             String contentType = message.getContentType();
             StringBuilder messageContent= new StringBuilder();
@@ -79,7 +72,6 @@ public class LerEmail {
             System.out.println("Mensagem: " + messageContent);
         }
 
-        // 7. Fechar pasta
         inbox.close(false);
         store.close();
     }
