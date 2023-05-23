@@ -37,7 +37,7 @@ public class UtilidadeEmail {
 
             msg.setReplyTo(InternetAddress.parse("no_reply@example.com", false));
 
-            msg.setSubject(subject, "Redes");
+            msg.setSubject(subject, "UTF-8");
 
             msg.setText(body, "UTF-8");
 
